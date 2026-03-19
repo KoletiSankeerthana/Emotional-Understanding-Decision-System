@@ -14,6 +14,20 @@ The pipeline combines:
 
 The goal is not just prediction, but to **understand → decide → guide**.
 
+
+## Dataset
+
+The dataset used for this project is provided via the following links:
+
+- **Training Data:**  
+  https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit?usp=sharing&ouid=107676686611527271344&rtpof=true&sd=true
+
+- **Test Data:**  
+  https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit?usp=sharing&ouid=107676686611527271344&rtpof=true&sd=true
+
+### Note
+The data was downloaded as CSV files (`train.csv` and `test.csv`) and used for local model training and prediction. The system ensures that the test dataset is never used during training to avoid data leakage.
+
 ---
 
 ## Approach
