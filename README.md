@@ -1,6 +1,6 @@
 
+---
 
-````markdown
 # 📘 Emotional Understanding & Decision System
 
 ## Project Overview
@@ -8,14 +8,16 @@
 This project builds an end-to-end system that understands a user’s emotional state from journal input and provides actionable recommendations. The system is designed to handle real-world challenges such as noisy text, missing data, and conflicting signals.
 
 The pipeline combines:
-- Machine learning for emotional understanding  
-- Rule-based logic for decision-making  
-- Uncertainty modeling for reliability  
+
+* Machine learning for emotional understanding
+* Rule-based logic for decision-making
+* Uncertainty modeling for reliability
 
 ---
-## Folder Structure
-```
 
+## Folder Structure
+
+```
 Emotional-Understanding-Decision-System/
 
 Arvyax_ML.ipynb                # Main notebook (end-to-end pipeline)
@@ -31,40 +33,47 @@ Sample_arvyax_reflective_dataset.csv   # Training dataset
 arvyax_test_inputs_120.csv             # Test dataset
 
 predictions.csv               # Final output file
-
 ```
+
+---
 
 ## Approach
 
 The system consists of three main layers:
 
 ### 1. Emotional Understanding Layer
-- Predicts **emotional state** using a classification model  
-- Predicts **intensity (1–5)** using a regression model  
+
+* Predicts **emotional state** using a classification model
+* Predicts **intensity (1–5)** using a regression model
 
 ### 2. Decision Layer
-- Determines **what action the user should take** (e.g., breathing, journaling, deep work)  
-- Determines **when to take the action** (e.g., now, within_15_min, later_today)  
+
+* Determines **what action the user should take** (e.g., breathing, journaling, deep work)
+* Determines **when to take the action** (e.g., now, within_15_min, later_today)
 
 This layer uses predicted outputs along with stress, energy, and time of day.
 
 ### 3. Uncertainty Layer
-- Computes a **confidence score (0–1)**  
-- Flags uncertain predictions based on:
-  - low confidence  
-  - short text  
-  - conflicting signals  
+
+* Computes a **confidence score (0–1)**
+* Flags uncertain predictions based on:
+
+  * low confidence
+  * short text
+  * conflicting signals
 
 ---
 
 ## Feature Engineering
 
 ### Text Features
-- TF-IDF vectorization (max 3000 features)
-- Preprocessing steps:
-  - lowercasing  
-  - punctuation removal  
-  - stopword removal  
+
+* TF-IDF vectorization (max 3000 features)
+* Preprocessing steps:
+
+  * lowercasing
+  * punctuation removal
+  * stopword removal
 
 Text features capture emotional expression and act as the **primary signal**.
 
@@ -73,29 +82,32 @@ Text features capture emotional expression and act as the **primary signal**.
 ### Metadata Features
 
 Numerical features:
-- stress_level  
-- energy_level  
-- sleep_hours  
-- duration_min  
-- reflection_quality  
+
+* stress_level
+* energy_level
+* sleep_hours
+* duration_min
+* reflection_quality
 
 Categorical features:
-- ambience_type  
-- time_of_day  
-- previous_day_mood  
-- face_emotion_hint  
+
+* ambience_type
+* time_of_day
+* previous_day_mood
+* face_emotion_hint
 
 Processing:
-- Numerical features scaled using StandardScaler  
-- Categorical features encoded using one-hot encoding  
+
+* Numerical features scaled using StandardScaler
+* Categorical features encoded using one-hot encoding
 
 ---
 
 ### Feature Combination
 
-Text and metadata features are combined as:
-
+```
 X = (text_features × 0.7) + (metadata × 0.3)
+```
 
 Text is weighted higher as it contains emotional meaning, while metadata provides contextual support.
 
@@ -104,24 +116,29 @@ Text is weighted higher as it contains emotional meaning, while metadata provide
 ## Model Choice
 
 ### Emotional State Prediction
-- Model: XGBoost Classifier  
-- Reason:
-  - Handles mixed feature types effectively  
-  - Robust to noisy and real-world data  
-  - Performs well on tabular + text combinations  
+
+* Model: XGBoost Classifier
+* Reason:
+
+  * Handles mixed feature types effectively
+  * Robust to noisy and real-world data
+  * Performs well on tabular + text combinations
 
 ---
 
 ### Intensity Prediction
-- Model: XGBoost Regressor  
-- Treated as a regression problem  
+
+* Model: XGBoost Regressor
+* Treated as a regression problem
 
 Reason:
-- Intensity values (1–5) are ordinal  
-- Regression captures the relative differences between levels better than classification  
+
+* Intensity values (1–5) are ordinal
+* Regression captures the relative differences between levels better than classification
 
 Post-processing:
-- Predictions are rounded and clipped to the valid range [1, 5]
+
+* Predictions are rounded and clipped to the valid range [1, 5]
 
 ---
 
@@ -129,13 +146,14 @@ Post-processing:
 
 Confidence is derived from model probabilities and adjusted using:
 
-- Short text detection (low information input)  
-- Conflicting signals (e.g., high stress + high energy)  
+* Short text detection (low information input)
+* Conflicting signals (e.g., high stress + high energy)
 
 The system sets an `uncertain_flag` when:
-- confidence is low  
-- input is ambiguous  
-- signals are inconsistent  
+
+* confidence is low
+* input is ambiguous
+* signals are inconsistent
 
 This prevents overconfident or unreliable predictions.
 
@@ -144,21 +162,24 @@ This prevents overconfident or unreliable predictions.
 ## Decision Logic (What + When)
 
 The decision engine uses:
-- predicted state  
-- intensity  
-- stress level  
-- energy level  
-- time of day  
+
+* predicted state
+* intensity
+* stress level
+* energy level
+* time of day
 
 Examples:
-- High stress + high intensity → box_breathing (now)  
-- Low energy → rest or light_planning  
-- High energy + low stress → deep_work  
+
+* High stress + high intensity → box_breathing (now)
+* Low energy → rest or light_planning
+* High energy + low stress → deep_work
 
 Timing decisions:
-- urgent → now  
-- moderate → within_15_min  
-- low → later_today / tonight  
+
+* urgent → now
+* moderate → within_15_min
+* low → later_today / tonight
 
 ---
 
@@ -168,7 +189,9 @@ Timing decisions:
 
 Make sure Python is installed, then run:
 
+```
 pip install pandas numpy scikit-learn xgboost nltk
+```
 
 ---
 
@@ -176,16 +199,18 @@ pip install pandas numpy scikit-learn xgboost nltk
 
 Download the datasets from the links:
 
-Training Data:  
-https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit
+Training Data:
+[https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit](https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit)
 
-Test Data:  
-https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit
+Test Data:
+[https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit](https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit)
 
 Download both as CSV files and rename them:
 
+```
 train.csv  
-test.csv  
+test.csv
+```
 
 Place them in the same folder as the notebook.
 
@@ -203,10 +228,18 @@ After running all cells, a file named `predictions.csv` will be generated in the
 
 It contains:
 
+```
 id  
 predicted_state  
 predicted_intensity  
 confidence  
 uncertain_flag  
 what_to_do  
-when_to_do  
+when_to_do
+```
+
+---
+
+
+If you want final polish:
+👉 I can review your **entire repo like a recruiter** and tell you if anything can still hurt your chances
