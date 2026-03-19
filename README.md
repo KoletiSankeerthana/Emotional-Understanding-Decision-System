@@ -11,10 +11,50 @@ The pipeline combines:
 - Machine learning for emotional understanding  
 - Rule-based logic for decision-making  
 - Uncertainty modeling for reliability  
+---
 
-The goal is not just prediction, but to **understand → decide → guide**.
+```
+## Folder Structure
+
+```
+
+Emotional-Understanding-Decision-System/
+│
+├── Arvyax_ML.ipynb                # Main notebook (end-to-end pipeline)
+├── README.md                     # Project documentation
+├── Error_Analysis.md             # Analysis of model failure cases
+├── Edge_Plan.md                  # Edge / offline deployment plan
+│
+├── Sample_arvyax_reflective_dataset.csv   # Training dataset
+├── arvyax_test_inputs_120.csv             # Test dataset
+│
+├── predictions.csv               # Final output file
+
+```
 
 ---
+
+## Description
+
+- **Arvyax_ML.ipynb** → Contains full pipeline:
+  - preprocessing  
+  - model training  
+  - prediction  
+  - decision logic  
+  - uncertainty modeling  
+
+- **Error_Analysis.md** → Detailed analysis of failure cases and improvements  
+
+- **Edge_Plan.md** → Deployment strategy for mobile/on-device usage  
+
+- **datasets (.csv)** → Input data used for training and testing  
+
+- **predictions.csv** → Final generated output with all required fields  
+
+```
+
+---
+
 
 ## Approach
 
