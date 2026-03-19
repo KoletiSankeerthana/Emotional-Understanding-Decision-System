@@ -183,10 +183,9 @@ Timing decisions:
 
 ---
 
-```markdown
 ## How to Run
 
-### 1. Install Dependencies
+## 1. Install Dependencies
 
 Make sure Python is installed, then run:
 
@@ -198,7 +197,7 @@ pip install pandas numpy scikit-learn xgboost nltk
 
 ---
 
-### 2. Download Dataset
+## 2. Download Dataset
 
 Download the datasets from the links:
 
