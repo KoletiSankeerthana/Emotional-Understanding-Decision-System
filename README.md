@@ -185,7 +185,13 @@ Timing decisions:
 
 ## How to Run
 
-## 1. Install Dependencies
+## 1. Clone the Repository
+
+git clone https://github.com/KoletiSankeerthana/Emotional-Understanding-Decision-System.git
+cd Emotional-Understanding-Decision-System
+
+
+## 2. Install Dependencies
 
 Make sure Python is installed, then run:
 
@@ -197,7 +203,7 @@ pip install pandas numpy scikit-learn xgboost nltk
 
 ---
 
-## 2. Download Dataset
+## 3. Download Dataset
 
 Download the datasets from the links:
 
@@ -220,13 +226,13 @@ Place them in the same folder as the notebook.
 
 ---
 
-### 3. Run the Project
+### 4. Run the Project
 
 Open the notebook `arvyax_ML.ipynb` and run all cells sequentially.
 
 ---
 
-### 4. Output
+### 5. Output
 
 After running all cells, a file named `predictions.csv` will be generated in the same folder.
 
