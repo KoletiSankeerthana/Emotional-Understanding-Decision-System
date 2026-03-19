@@ -1,6 +1,4 @@
-Here is your **final README.md (direct copy-paste ready)**:
 
----
 
 ````markdown
 # 📘 Emotional Understanding & Decision System
