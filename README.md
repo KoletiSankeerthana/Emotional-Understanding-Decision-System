@@ -1,7 +1,18 @@
+Got it — your issue is **formatting style**, not content.
+Right now your README looks like raw text (Image 1), but you want **clean GitHub-style sections (Image 2)**.
 
+👉 The problem: you didn’t use proper Markdown headings, spacing, and code blocks consistently.
 
-````
+---
+
+# ✅ FIXED FULL README (proper GitHub format)
+
+Copy-paste this **entire cleaned version**:
+
+```markdown
 # 📘 Emotional Understanding & Decision System
+
+---
 
 ## Project Overview
 
@@ -11,9 +22,12 @@ The pipeline combines:
 - Machine learning for emotional understanding  
 - Rule-based logic for decision-making  
 - Uncertainty modeling for reliability  
+
 ---
 
 ## Folder Structure
+
+```
 
 Emotional-Understanding-Decision-System/
 │
@@ -27,7 +41,7 @@ Emotional-Understanding-Decision-System/
 │
 ├── predictions.csv               # Final output file
 
-
+```
 
 ---
 
@@ -48,14 +62,9 @@ Emotional-Understanding-Decision-System/
 
 - **predictions.csv** → Final generated output with all required fields  
 
-```
-
 ---
 
-
 ## Approach
-
-The system consists of three main layers:
 
 ### 1. Emotional Understanding Layer
 - Predicts **emotional state** using a classification model  
@@ -64,8 +73,6 @@ The system consists of three main layers:
 ### 2. Decision Layer
 - Determines **what action the user should take** (e.g., breathing, journaling, deep work)  
 - Determines **when to take the action** (e.g., now, within_15_min, later_today)  
-
-This layer uses predicted outputs along with stress, energy, and time of day.
 
 ### 3. Uncertainty Layer
 - Computes a **confidence score (0–1)**  
@@ -84,10 +91,6 @@ This layer uses predicted outputs along with stress, energy, and time of day.
   - lowercasing  
   - punctuation removal  
   - stopword removal  
-
-Text features capture emotional expression and act as the **primary signal**.
-
----
 
 ### Metadata Features
 
@@ -110,11 +113,13 @@ Processing:
 
 ---
 
-### Feature Combination
+## Feature Combination
 
-Text and metadata features are combined as:
+```
 
 X = (text_features × 0.7) + (metadata × 0.3)
+
+````
 
 Text is weighted higher as it contains emotional meaning, while metadata provides contextual support.
 
@@ -124,12 +129,7 @@ Text is weighted higher as it contains emotional meaning, while metadata provide
 
 ### Emotional State Prediction
 - Model: XGBoost Classifier  
-- Reason:
-  - Handles mixed feature types effectively  
-  - Robust to noisy and real-world data  
-  - Performs well on tabular + text combinations  
-
----
+- Handles mixed feature types and noisy data effectively  
 
 ### Intensity Prediction
 - Model: XGBoost Regressor  
@@ -137,10 +137,10 @@ Text is weighted higher as it contains emotional meaning, while metadata provide
 
 Reason:
 - Intensity values (1–5) are ordinal  
-- Regression captures the relative differences between levels better than classification  
+- Regression captures relative differences better  
 
 Post-processing:
-- Predictions are rounded and clipped to the valid range [1, 5]
+- Predictions are rounded and clipped to range [1, 5]
 
 ---
 
@@ -156,7 +156,7 @@ The system sets an `uncertain_flag` when:
 - input is ambiguous  
 - signals are inconsistent  
 
-This prevents overconfident or unreliable predictions.
+This prevents overconfident predictions.
 
 ---
 
@@ -181,63 +181,79 @@ Timing decisions:
 
 ---
 
-Here is a **simple, clean, copy-paste version** of the **How to Run** section for your README:
-
----
-
-````
 ## How to Run
 
 ### 1. Clone the Repository
 
-git clone https://github.com/KoletiSankeerthana/Emotional-Understanding-Decision-System.git  
-cd Emotional-Understanding-Decision-System  
+```bash
+git clone https://github.com/KoletiSankeerthana/Emotional-Understanding-Decision-System.git
+cd Emotional-Understanding-Decision-System
+````
 
 ---
 
 ### 2. Install Dependencies
 
-Make sure Python is installed, then run:
-
-pip install pandas numpy scikit-learn xgboost nltk  
+```bash
+pip install pandas numpy scikit-learn xgboost nltk
+```
 
 ---
 
 ### 3. Download Dataset
 
-Download the datasets from the links:
+Download from:
 
-Training Data:  
-https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit  
+* Training Data:
+  [https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit](https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit)
 
-Test Data:  
-https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit  
+* Test Data:
+  [https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit](https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit)
 
-Download both as CSV files and rename them:
+Rename as:
 
-train.csv  
-test.csv  
+```
+train.csv
+test.csv
+```
 
-Place them in the same folder as the notebook.
+Place in project folder.
 
 ---
 
 ### 4. Run the Project
 
-Open the notebook `arvyax_ML.ipynb` and run all cells sequentially.
+Open the notebook:
+
+```
+Arvyax_ML.ipynb
+```
+
+Run all cells sequentially.
 
 ---
 
 ### 5. Output
 
-After running all cells, a file named `predictions.csv` will be generated in the same folder.
+After execution:
 
-It contains:
+```
+predictions.csv
+```
 
-id  
-predicted_state  
-predicted_intensity  
-confidence  
-uncertain_flag  
-what_to_do  
-when_to_do  
+Generated with:
+
+```
+id
+predicted_state
+predicted_intensity
+confidence
+uncertain_flag
+what_to_do
+when_to_do
+```
+
+````
+
+---
+
