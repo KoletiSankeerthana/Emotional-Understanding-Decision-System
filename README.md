@@ -14,6 +14,7 @@ The pipeline combines:
 
 ---
 ## Folder Structure
+```
 
 Emotional-Understanding-Decision-System/
 
@@ -30,6 +31,8 @@ Sample_arvyax_reflective_dataset.csv   # Training dataset
 arvyax_test_inputs_120.csv             # Test dataset
 
 predictions.csv               # Final output file
+
+```
 
 ## Approach
 
