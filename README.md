@@ -183,6 +183,7 @@ Timing decisions:
 
 ---
 
+```markdown
 ## How to Run
 
 ### 1. Install Dependencies
@@ -190,7 +191,9 @@ Timing decisions:
 Make sure Python is installed, then run:
 
 ```
+
 pip install pandas numpy scikit-learn xgboost nltk
+
 ```
 
 ---
@@ -199,17 +202,19 @@ pip install pandas numpy scikit-learn xgboost nltk
 
 Download the datasets from the links:
 
-Training Data:
-[https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit](https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit)
+Training Data:  
+https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit  
 
-Test Data:
-[https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit](https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit)
+Test Data:  
+https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit  
 
 Download both as CSV files and rename them:
 
 ```
-train.csv  
+
+train.csv
 test.csv
+
 ```
 
 Place them in the same folder as the notebook.
@@ -229,17 +234,17 @@ After running all cells, a file named `predictions.csv` will be generated in the
 It contains:
 
 ```
-id  
-predicted_state  
-predicted_intensity  
-confidence  
-uncertain_flag  
-what_to_do  
+
+id
+predicted_state
+predicted_intensity
+confidence
+uncertain_flag
+what_to_do
 when_to_do
+
 ```
 
 ---
 
 
-If you want final polish:
-👉 I can review your **entire repo like a recruiter** and tell you if anything can still hurt your chances
