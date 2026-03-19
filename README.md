@@ -1,3 +1,8 @@
+Here is your **final README.md (direct copy-paste ready)**:
+
+---
+
+````markdown
 # 📘 Emotional Understanding & Decision System
 
 ## Project Overview
@@ -8,47 +13,25 @@ The pipeline combines:
 - Machine learning for emotional understanding  
 - Rule-based logic for decision-making  
 - Uncertainty modeling for reliability  
----
 
+---
 ## Folder Structure
 
 Emotional-Understanding-Decision-System/
-│
-├── Arvyax_ML.ipynb                # Main notebook (end-to-end pipeline)
-├── README.md                     # Project documentation
-├── Error_Analysis.md             # Analysis of model failure cases
-├── Edge_Plan.md                  # Edge / offline deployment plan
-│
-├── Sample_arvyax_reflective_dataset.csv   # Training dataset
-├── arvyax_test_inputs_120.csv             # Test dataset
-│
-├── predictions.csv               # Final output file
 
+Arvyax_ML.ipynb                # Main notebook (end-to-end pipeline)
 
+README.md                     # Project documentation
 
----
+Error_Analysis.md             # Analysis of model failure cases
 
-## Description
+Edge_Plan.md                  # Edge / offline deployment plan
 
-- **Arvyax_ML.ipynb** → Contains full pipeline:
-  - preprocessing  
-  - model training  
-  - prediction  
-  - decision logic  
-  - uncertainty modeling  
+Sample_arvyax_reflective_dataset.csv   # Training dataset
 
-- **Error_Analysis.md** → Detailed analysis of failure cases and improvements  
+arvyax_test_inputs_120.csv             # Test dataset
 
-- **Edge_Plan.md** → Deployment strategy for mobile/on-device usage  
-
-- **datasets (.csv)** → Input data used for training and testing  
-
-- **predictions.csv** → Final generated output with all required fields  
-
-```
-
----
-
+predictions.csv               # Final output file
 
 ## Approach
 
@@ -178,6 +161,51 @@ Timing decisions:
 
 ---
 
-Here is a **simple, clean, copy-paste version** of the **How to Run** section for your README:
+## How to Run
 
---- do not add anything or remove any hting just make it as proper readme format
+### 1. Install Dependencies
+
+Make sure Python is installed, then run:
+
+pip install pandas numpy scikit-learn xgboost nltk
+
+---
+
+### 2. Download Dataset
+
+Download the datasets from the links:
+
+Training Data:  
+https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit
+
+Test Data:  
+https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit
+
+Download both as CSV files and rename them:
+
+train.csv  
+test.csv  
+
+Place them in the same folder as the notebook.
+
+---
+
+### 3. Run the Project
+
+Open the notebook `arvyax_ML.ipynb` and run all cells sequentially.
+
+---
+
+### 4. Output
+
+After running all cells, a file named `predictions.csv` will be generated in the same folder.
+
+It contains:
+
+id  
+predicted_state  
+predicted_intensity  
+confidence  
+uncertain_flag  
+what_to_do  
+when_to_do  
