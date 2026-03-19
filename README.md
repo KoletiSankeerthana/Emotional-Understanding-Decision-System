@@ -13,10 +13,7 @@ The pipeline combines:
 - Uncertainty modeling for reliability  
 ---
 
-```
 ## Folder Structure
-
-```
 
 Emotional-Understanding-Decision-System/
 │
@@ -30,7 +27,7 @@ Emotional-Understanding-Decision-System/
 │
 ├── predictions.csv               # Final output file
 
-```
+
 
 ---
 
