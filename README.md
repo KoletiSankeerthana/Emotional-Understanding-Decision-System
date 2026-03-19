@@ -188,6 +188,7 @@ Timing decisions:
 ## 1. Clone the Repository
 
 git clone https://github.com/KoletiSankeerthana/Emotional-Understanding-Decision-System.git
+
 cd Emotional-Understanding-Decision-System
 
 
