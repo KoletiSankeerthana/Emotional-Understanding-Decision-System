@@ -14,20 +14,6 @@ The pipeline combines:
 
 The goal is not just prediction, but to **understand → decide → guide**.
 
-
-## Dataset
-
-The dataset used for this project is provided via the following links:
-
-- **Training Data:**  
-  https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit?usp=sharing&ouid=107676686611527271344&rtpof=true&sd=true
-
-- **Test Data:**  
-  https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit?usp=sharing&ouid=107676686611527271344&rtpof=true&sd=true
-
-### Note
-The data was downloaded as CSV files (`train.csv` and `test.csv`) and used for local model training and prediction. The system ensures that the test dataset is never used during training to avoid data leakage.
-
 ---
 
 ## Approach
@@ -158,57 +144,63 @@ Timing decisions:
 
 ---
 
+Here is a **simple, clean, copy-paste version** of the **How to Run** section for your README:
+
+---
+
+````
 ## How to Run
 
-### 1. Install dependencies
+### 1. Clone the Repository
 
-```bash
-pip install pandas numpy scikit-learn xgboost nltk
-````
-
----
-
-### 2. Prepare dataset
-
-Place the following files in the project directory:
-
-```
-train.csv
-test.csv
-```
+git clone https://github.com/KoletiSankeerthana/Emotional-Understanding-Decision-System.git  
+cd Emotional-Understanding-Decision-System  
 
 ---
 
-### 3. Run the code
+### 2. Install Dependencies
 
-```bash
-python main.py
-```
+Make sure Python is installed, then run:
 
-(or run the notebook step by step)
+pip install pandas numpy scikit-learn xgboost nltk  
 
 ---
 
-### 4. Output
+### 3. Download Dataset
 
-The final output will be saved as:
+Download the datasets from the links:
 
-```
-predictions.csv
-```
+Training Data:  
+https://docs.google.com/spreadsheets/d/1yLDum7yWr3IH0KivluCBEvqHGlfvFW_S/edit  
+
+Test Data:  
+https://docs.google.com/spreadsheets/d/1lCvTufEhGgtDJp6b9oYyFXpCZqWPirSX/edit  
+
+Download both as CSV files and rename them:
+
+train.csv  
+test.csv  
+
+Place them in the same folder as the notebook.
 
 ---
 
-## Output Format
+### 4. Run the Project
 
-The output file contains:
+Open the notebook `arvyax_ML.ipynb` and run all cells sequentially.
 
-```
-id
-predicted_state
-predicted_intensity
-confidence
-uncertain_flag
-what_to_do
-when_to_do
-```
+---
+
+### 5. Output
+
+After running all cells, a file named `predictions.csv` will be generated in the same folder.
+
+It contains:
+
+id  
+predicted_state  
+predicted_intensity  
+confidence  
+uncertain_flag  
+what_to_do  
+when_to_do  
